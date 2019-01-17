@@ -1,0 +1,4 @@
+-   repo: https://github.com/askulkarni2/pre-commit-docker-jenkinslint
+    rev: '0.0.1'  # Fill this in with a current revision
+    hooks:
+    -   id: docker-jenkinslint
