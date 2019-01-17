@@ -3,4 +3,4 @@
     description: jenkinslint, but provided by docker
     entry: jflint -j http://localhost -u admin -p $(cat /var/jenkins_home/secrets/initialAdminPassword)
     language: docker
-    files: Jenkinsfile
+    files: Jenkinsfile$
