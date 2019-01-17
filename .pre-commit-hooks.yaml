@@ -1,4 +1,6 @@
--   repo: https://github.com/askulkarni2/pre-commit-docker-jenkinslint
-    rev: '0.0.1'  # Fill this in with a current revision
-    hooks:
-    -   id: docker-jenkinslint
+-   id: docker-jenkinslint
+    name: jenkinslint (via docker)
+    description: jenkinslint, but provided by docker
+    entry: jflint -j http://localhost -u admin -p $(cat /var/jenkins_home/secrets/initialAdminPassword)
+    language: docker
+    files: Jenkinsfile
