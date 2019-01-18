@@ -16,6 +16,7 @@ RUN /usr/local/bin/install-plugins.sh \
     kubernetes \
     cloudbees-folder \
     blueocean \
-    ansicolor
+    ansicolor \
+    timestamper
     
 ADD run-jflint.sh /usr/local/bin/run-jflint.sh
