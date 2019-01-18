@@ -8,7 +8,10 @@ jobs:
       - setup_remote_docker
       - run: 
           name: Install dependencies
-          command: pip3 install --user pre-commit
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip3 install pre-commit
       - run:
           name: Build Docker image
           command: |
