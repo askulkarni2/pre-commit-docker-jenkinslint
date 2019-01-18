@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: docker
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Docker image
+          command: |
+            make build
+      - run:
+          name: Test Jenkinsfile
+          command: |
+            make test
+      - run:
+          name: Push Docker Image
+          command: |
+            echo $DOCKER_PWD | docker login -u askulkarni2 --password-stdin
+            make push

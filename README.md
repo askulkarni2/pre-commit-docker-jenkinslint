@@ -1,3 +1,5 @@
+master: [![CircleCI](https://circleci.com/gh/askulkarni2/pre-commit-docker-jenkinslint/tree/master.svg?style=svg)](https://circleci.com/gh/askulkarni2/pre-commit-docker-jenkinslint/tree/master)
+
 pre-commit-docker-jenkinslint
 ========================
 
