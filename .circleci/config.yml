@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+      - run: 
+          name: Install dependencies
+          command: |
+            pyenv local 3.5.2
+            python -m venv venv
+            . venv/bin/activate
+            pip install pre-commit
+      - run:
+          name: Build Docker image
+          command: |
+            make build
+      - run:
+          name: Test Jenkinsfile
+          command: |
+            . venv/bin/activate
+            make test
+      - run:
+          name: Push Docker Image
+          command: |
+            echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
+            make push

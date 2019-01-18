@@ -1,3 +1,5 @@
+master: [![CircleCI](https://circleci.com/gh/askulkarni2/pre-commit-docker-jenkinslint/tree/master.svg?style=svg)](https://circleci.com/gh/askulkarni2/pre-commit-docker-jenkinslint/tree/master)
+
 pre-commit-docker-jenkinslint
 ========================
 
@@ -18,11 +20,11 @@ The metadata in hooks.yaml hooks this up:
 
 ```yaml
     entry: askulkarni2/jenkinslint /usr/local/bin/run-jflint.sh
-    language: docker
+    language: docker_image
 ```
 
 Here `jflint` is the executable inside the container and we tell `pre-commit`
-that the language is `docker`.
+that the language is `docker_image`.
 
 
 ## How would I use this repository with pre-commit?
