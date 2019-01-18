@@ -7,9 +7,9 @@ jobs:
       - run: 
           name: Install dependencies
           command: |
-            python3 -m venv venv
+            python -m venv venv
             . venv/bin/activate
-            pip3 install pre-commit
+            pip install pre-commit
       - run:
           name: Build Docker image
           command: |
