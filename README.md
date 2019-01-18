@@ -17,7 +17,7 @@ executables are run as the user.
 The metadata in hooks.yaml hooks this up:
 
 ```yaml
-    entry: jflint -j http://localhost -u admin -p $(cat /var/jenkins_home/secrets/initialAdminPassword)
+    entry: askulkarni2/jenkinslint /usr/local/bin/run-jflint.sh
     language: docker
 ```
 
@@ -27,14 +27,20 @@ that the language is `docker`.
 
 ## How would I use this repository with pre-commit?
 
-Add this to your `.pre-commit-config.yaml`:
+Install pre-commit as per instructions at https://pre-commit.com/#install.
+You'll also need to use at least version 0.10.0 of pre-commit.
+
+Add this to your `.pre-commit-config.yaml` in root of your repo:
 
 ```yaml
--   repo: https://github.com/askulkarni2/pre-commit-docker-jenkinslint
-    rev: '0.0.1'  # Fill this in with a current revision
+-   repo: local
     hooks:
     -   id: docker-jenkinslint
+        language: docker_image
+        entry: --entrypoint /usr/local/bin/run-jflint.sh askulkarni2/jenkinslint
         files: Jenkinsfile
+
 ```
 
-You'll also need to use at least version 0.10.0 of pre-commit.
+Install the pre-commit hook.
+`pre-commit install`

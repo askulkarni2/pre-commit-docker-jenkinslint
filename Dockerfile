@@ -17,4 +17,5 @@ RUN /usr/local/bin/install-plugins.sh \
     cloudbees-folder \
     blueocean \
     ansicolor
+    
 ADD run-jflint.sh /usr/local/bin/run-jflint.sh
