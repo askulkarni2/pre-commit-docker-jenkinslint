@@ -19,6 +19,7 @@ jobs:
       - run:
           name: Test Jenkinsfile
           command: |
+            . venv/bin/activate
             make test
       - run:
           name: Push Docker Image
