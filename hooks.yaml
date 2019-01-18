@@ -1,5 +1,5 @@
 -   id: docker-jenkinslint
     name: jenkinslint (via docker_image)
     description: jenkinslint, but provided by docker
-    entry: askulkarni2/jenkinslint /usr/local/bin/run-jflint.sh
+    entry: --entrypoint /usr/local/bin/run-jflint.sh askulkarni2/jenkinslint
     language: docker_image
