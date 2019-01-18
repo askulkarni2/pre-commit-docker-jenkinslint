@@ -2,10 +2,14 @@ version: 2
 jobs:
   build:
     docker:
-      - image: docker
+      image: circleci/python:3.7.2
     steps:
       - checkout
       - setup_remote_docker
+      - run: 
+          name: Install dependencies
+          command: pip3 install pre-commit
+
       - run:
           name: Build Docker image
           command: |
@@ -17,5 +21,5 @@ jobs:
       - run:
           name: Push Docker Image
           command: |
-            echo $DOCKER_PWD | docker login -u askulkarni2 --password-stdin
+            echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
             make push
