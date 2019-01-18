@@ -34,6 +34,7 @@ Add this to your `.pre-commit-config.yaml`:
     rev: '0.0.1'  # Fill this in with a current revision
     hooks:
     -   id: docker-jenkinslint
+        files: Jenkinsfile
 ```
 
 You'll also need to use at least version 0.10.0 of pre-commit.
