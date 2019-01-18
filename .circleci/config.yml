@@ -8,7 +8,7 @@ jobs:
       - setup_remote_docker
       - run: 
           name: Install dependencies
-          command: pip3 install pre-commit
+          command: pip3 install --user pre-commit
       - run:
           name: Build Docker image
           command: |
