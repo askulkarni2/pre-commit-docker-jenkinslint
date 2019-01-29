@@ -11,6 +11,7 @@ RUN npm install jflint -g
 
 RUN /usr/local/bin/install-plugins.sh \
     pipeline-model-definition \
+    pipeline-utility-steps \
     performance \
     gatling \
     kubernetes \
