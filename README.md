@@ -35,7 +35,8 @@ You'll also need to use at least version 0.10.0 of pre-commit.
 Add this to your `.pre-commit-config.yaml` in root of your repo:
 
 ```yaml
--   repo: local
+-   repo: https://github.com/askulkarni2/pre-commit-docker-jenkinslint
+    rev: master
     hooks:
     -   id: docker-jenkinslint
         language: docker_image
